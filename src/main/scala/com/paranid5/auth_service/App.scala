@@ -16,7 +16,7 @@ import org.http4s.{Request, Response}
 
 object App extends IOApp:
   override def run(args: List[String]): IO[ExitCode] =
-    println("BIBA")
+    Exception("BIBA").printStackTrace()
     AppModule(runServer() run _) map:
       _.fold(fa = _ ⇒ ExitCode.Error, fb = _ ⇒ ExitCode.Success)
 
